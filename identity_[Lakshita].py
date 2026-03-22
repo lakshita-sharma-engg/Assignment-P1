@@ -1,112 +1,114 @@
-# Checking memory ID changes with different values
+# Trace the memory id using different variables and see the location is changed or not 
 
-#  INTEGER 
-print(" INTEGER")
+# Integer data type 
 
-a = 200
-print("Before:", id(a))
-a = 75
-print("After :", id(a))
-print("→ Memory ID changed\n")
+x = 250
+print("int before : " + str(id(x)))
+x = 80
+print("int after : " + str(id(x)))
+print("Memory ID of x is changed in Integer\n")
 
-a = 90
-print("Before:", id(a))
-a = a + 5
-print("After :", id(a))
-print("→ Memory ID changed (Addition)\n")
+x = 45
+print("int before : " + str(id(x)))
+x = x + 10
+print("int after : " + str(id(x)))
+print("Memory ID of x is changed in Addition\n")
 
-a = 45
-print("Before:", id(a))
-a = a - 10
-print("After :", id(a))
-print("→ Memory ID changed (Subtraction)\n")
+x = 70
+print("int before : " + str(id(x)))
+x = x - 25
+print("int after  : " + str(id(x)))
+print("Memory ID of x is changed in Subtraction\n")
 
-a = 12
-print("Before:", id(a))
-a = a * 2
-print("After :", id(a))
-print("→ Memory ID changed (Multiplication)\n")
+x = 18
+print("int before : " + str(id(x)))
+x = x * 1
+print("int after  : " + str(id(x)))
+print("Memory ID of x may not change if value remains same\n")
 
-a = 22
-print("Before:", id(a))
-a = a % 5
-print("After :", id(a))
-print("→ Memory ID changed (Modulus)\n")
+x = 27
+print("int before : " + str(id(x)))
+x = x % 4
+print("int after : " , str(id(x)))
+print("Memory ID of x is changed in Modulus\n")
 
-
-# FLOAT
-print("FLOAT")
-
-b = 7.2
-print("Before:", id(b))
-
-b = 9.8
-print("After :", id(b))
-print("→ Memory ID changed\n")
-
-b = b + 3.3
-print("After Addition:", id(b))
-
-b = b - 2.1
-print("After Subtraction:", id(b))
-
-b = b * 5
-print("After Multiplication:", id(b))
-
-b = b / 2
-print("After Division:", id(b))
-
-print("→ Float is immutable\n")
+# Integer are immutable data types
 
 
-#  LIST 
-print(" LIST ")
+# Float data type 
 
-c = [10, 20, 30]
-print("Before:", id(c))
-c.append(40)
-print("After :", id(c))
-print("→ Memory ID did NOT change (append)\n")
+y = 6.3
+print("float before : " , str(id(y)))
 
-c = [5, 15, 25]
-print("Before:", id(c))
-c[1] = 100
-print("After :", id(c))
-print("→ Memory ID did NOT change (update)\n")
+y = 9.4
+print("float after : " , str(id(y)))
+print("ID of y is changed in Float \n")
+
+y = y + 1.6 
+print("float after add operation : " , str(id(y)))
+
+y = y - 3.2
+print("float after sub operation : " , str(id(y)))
+
+y = y * 5
+print("float after multi operation : " , str(id(y)))
+
+y = y / 2
+print("float after div operation : " , str(id(y)))
+
+print("Float is immutable\n")
 
 
-#  STRING
-print("STRING ")
+# List data type
 
-s = "Python"
-print("Before:", id(s))
+x = [4, 8, 12]
+print("ID before : " , id(x))
+x.append(16)
+print("ID after  : ",  id(x)) 
+print("Memory ID of x is not changed in List\n")
 
-s = s + " Code"
-print("After Concatenation:", id(s))
+x = [7, 14, 21]
+print("ID before : ", id(x))
+x[1] = 100
+print("ID after  : " , id(x))
+print("Memory ID of x is not changed in List\n")
+
+# List are mutable data type
+
+
+# String data type
+
+s = 'Python'
+print("ID before : " ,id(s))
+
+s = s + ' Code'
+print("ID after  :", id(s))
 
 s = s.upper()
-print("After Upper:", id(s))
+print("ID after upper : ", id(s))
 
 s = s.lower()
-print("After Lower:", id(s))
+print("ID after lower : ", id(s))
 
 s = s.replace("code", "Program")
-print("After Replace:", id(s))
+print("ID after replace : ", id(s))
 
-s = "  Python Program  "
+s = " Python Program "
 s = s.strip()
-print("After Strip:", id(s))
+print("ID after strip : " ,id(s))
 
-print("→ Strings are immutable\n")
+# String are immutable data type
 
 
-# DICTIONARY 
-print(" DICTIONARY")
+# Dictionary data type
 
 d = {"Name": "Rahul", "Age": "19"}
-print("Before:", id(d))
+print(d)
+print("ID before : ", id(d))
 
 d["City"] = "Indore"
-print("After :", id(d))
+print(d)
+print("ID after : ", id(d))
+print("The address of the dictionary does not change")
 
-print("→ Memory ID did NOT change\n")
+# Dictionary are mutable data type
