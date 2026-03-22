@@ -1,1 +1,1 @@
-# Assignment-P1
+When we copy using list(data), it creates a shallow copy, not a full copy. So, inner lists are still shared between data and update_data. When we modify update_data[1][1], it also affects data. This happens because both variables point to the same inner objects.
