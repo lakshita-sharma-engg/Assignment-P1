@@ -1,118 +1,115 @@
-# Trace memory ID of different data types and check if it changes or not
 
-# ------------------ INTEGER ------------------
-print("----- INTEGER -----")
+# Trace the memory id using different variables and see the location is changed or not 
 
-x = 100
-print("Before:", id(x))
-x = 50
-print("After :", id(x))
-print("→ Memory ID changed\n")
+# Integer data type 
 
-x = 60
-print("Before:", id(x))
-x = x + 1
-print("After :", id(x))
-print("→ Memory ID changed (Addition)\n")
+x = 250
+print("int before : " + str(id(x)))
+x = 80
+print("int after : " + str(id(x)))
+print("Memory ID of x is changed in Integer\n")
 
-x = 35
-print("Before:", id(x))
-x = x - 20
-print("After :", id(x))
-print("→ Memory ID changed (Subtraction)\n")
+x = 45
+print("int before : " + str(id(x)))
+x = x + 10
+print("int after : " + str(id(x)))
+print("Memory ID of x is changed in Addition\n")
 
-x = 29
-print("Before:", id(x))
+x = 70
+print("int before : " + str(id(x)))
+x = x - 25
+print("int after  : " + str(id(x)))
+print("Memory ID of x is changed in Subtraction\n")
+
+x = 18
+print("int before : " + str(id(x)))
 x = x * 1
-print("After :", id(x))
-print("→ Memory ID may remain same if value doesn't change\n")
+print("int after  : " + str(id(x)))
+print("Memory ID of x may not change if value remains same\n")
 
-x = 15
-print("Before:", id(x))
-x = x % 2
-print("After :", id(x))
-print("→ Memory ID changed (Modulus)\n")
+x = 27
+print("int before : " + str(id(x)))
+x = x % 4
+print("int after : " , str(id(x)))
+print("Memory ID of x is changed in Modulus\n")
 
-# Conclusion: Integers are immutable
-
-
-# ------------------ FLOAT ------------------
-print("----- FLOAT -----")
-
-y = 4.5
-print("Before:", id(y))
-
-y = 5.67
-print("After :", id(y))
-print("→ Memory ID changed\n")
-
-y = y + 2
-print("After Addition:", id(y))
-
-y = y - 4
-print("After Subtraction:", id(y))
-
-y = y * 10
-print("After Multiplication:", id(y))
-
-y = y / 10
-print("After Division:", id(y))
-
-print("→ Float is immutable\n")
+# Integer are immutable data types
 
 
-# ------------------ LIST ------------------
-print("----- LIST -----")
+# Float data type 
 
-x = [1, 2, 3]
-print("Before:", id(x))
-x.append(4)
-print("After :", id(x))
-print("→ Memory ID did NOT change (append)\n")
+y = 6.3
+print("float before : " , str(id(y)))
 
-x = [1, 2, 3]
-print("Before:", id(x))
-x[0] = 100
-print("After :", id(x))
-print("→ Memory ID did NOT change (update)\n")
+y = 9.4
+print("float after : " , str(id(y)))
+print("ID of y is changed in Float \n")
 
-# Conclusion: Lists are mutable
+y = y + 1.6 
+print("float after add operation : " , str(id(y)))
+
+y = y - 3.2
+print("float after sub operation : " , str(id(y)))
+
+y = y * 5
+print("float after multi operation : " , str(id(y)))
+
+y = y / 2
+print("float after div operation : " , str(id(y)))
+
+print("Float is immutable\n")
 
 
-# ------------------ STRING ------------------
-print("----- STRING -----")
+# List data type
 
-s = "Hello"
-print("Before:", id(s))
+x = [4, 8, 12]
+print("ID before : " , id(x))
+x.append(16)
+print("ID after  : ",  id(x)) 
+print("Memory ID of x is not changed in List\n")
 
-s = s + " World"
-print("After Concatenation:", id(s))
+x = [7, 14, 21]
+print("ID before : ", id(x))
+x[1] = 100
+print("ID after  : " , id(x))
+print("Memory ID of x is not changed in List\n")
+
+# List are mutable data type
+
+
+# String data type
+
+s = 'Python'
+print("ID before : " ,id(s))
+
+s = s + ' Code'
+print("ID after  :", id(s))
 
 s = s.upper()
-print("After Upper:", id(s))
+print("ID after upper : ", id(s))
 
 s = s.lower()
-print("After Lower:", id(s))
+print("ID after lower : ", id(s))
 
-s = s.replace("world", "Sanya")
-print("After Replace:", id(s))
+s = s.replace("code", "Program")
+print("ID after replace : ", id(s))
 
-s = " Hello World "
+s = " Python Program "
 s = s.strip()
-print("After Strip:", id(s))
+print("ID after strip : " ,id(s))
 
-print("→ Strings are immutable\n")
+# String are immutable data type
 
 
-# ------------------ DICTIONARY ------------------
-print("----- DICTIONARY -----")
+# Dictionary data type
 
-d = {"Name": "Sanya", "Age": "20"}
-print("Before:", id(d))
+d = {"Name": "Rahul", "Age": "19"}
+print(d)
+print("ID before : ", id(d))
 
-d["City"] = "Ujjain"
-print("After :", id(d))
+d["City"] = "Indore"
+print(d)
+print("ID after : ", id(d))
+print("The address of the dictionary does not change")
 
-print("→ Memory ID did NOT change\n")
-
-# Conclusion: Dictionaries are mutable
+# Dictionary are mutable data type
